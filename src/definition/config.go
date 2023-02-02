@@ -17,28 +17,11 @@ type Configuration struct {
 		} `json:"port"`
 	} `json:"server"`
 
-	Database struct {
-		Connection     string `json:"connection"`
-		MaxConnections int    `json:"max_connections"`
-		Lifetime       int    `json:"lifetime"`
-	} `json:"database"`
+	Rabbit struct {
+		ConnectionURL string `json:"connection_url"`
+	} `json:"rabbit"`
 
-	Mongo struct {
-		Connection string `json:"connection"`
-	} `json:"mongo"`
-
-	Redis struct {
-		Address  string `json:"address"`
-		Password string `json:"password"`
-	} `json:"redis"`
-
-	User struct {
-		CryptKey string `json:"crypt_key"`
-	} `json:"user"`
-
-	Image struct {
-		BasePath string `json:"base"`
-	} `json:"image"`
+	Hosts []string `json:"hosts"`
 }
 
 var Config Configuration

@@ -8,10 +8,11 @@ import (
 
 func StartServer(apiControllers *controllers.ApiControllers, apiEvents *events.ApiEvents) {
 	server := definition.Server
+	gateway := definition.Gateway
 	config := definition.Config.Server
 
 	// проставлять роуты
-	setRoutes(server, apiControllers, apiEvents)
+	setRoutes(server, gateway, apiControllers, apiEvents)
 
 	// проставлять миддлвейры
 	setMiddlewares(server)
