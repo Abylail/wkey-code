@@ -8,14 +8,17 @@ import (
 
 func StartServer(apiControllers *controllers.ApiControllers, apiEvents *events.ApiEvents) {
 	server := definition.Server
-	gateway := definition.Gateway
+	router := definition.Gateway
 	config := definition.Config.Server
 
 	// проставлять роуты
-	setRoutes(server, gateway, apiControllers, apiEvents)
+	setRoutes(server, apiControllers, apiEvents)
 
 	// проставлять миддлвейры
 	setMiddlewares(server)
+
+	// проставляем перенаправления запросов
+	setGateway(router)
 
 	// запуск сервера
 	var port string
