@@ -9,7 +9,9 @@ import (
 func setGateway(router *gateway.Client) {
 	config := definition.Config
 
-	stockRoute := lazyway.Route("/api/v1/stock").SetHosts(config.Hosts...).SetPort(":8083")
+	stockClientRoute := lazyway.Route("/api/v1/stock").SetHosts(config.Hosts...).SetPort(":8083")
+	stockAdminRoute := lazyway.Route("/admin/api/v1/stock").SetHosts(config.Hosts...).SetPort(":8083")
 
-	router.Route(stockRoute)
+	router.Route(stockClientRoute)
+	router.Route(stockAdminRoute)
 }
