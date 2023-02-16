@@ -5,7 +5,7 @@ go 1.18
 require (
 	github.com/go-co-op/gocron v1.18.0
 	github.com/labstack/echo/v4 v4.10.0
-	github.com/lowl11/lazy-gateway v0.0.2
+	github.com/lowl11/lazy-gateway v0.0.3
 	github.com/lowl11/lazyconfig v1.0.6
 	github.com/lowl11/lazylog v1.1.1
 	github.com/streadway/amqp v1.0.0
